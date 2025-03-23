@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+main {
+  width: 100;
+  margin: 2rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+h1 {
+  text-align: center;
+  color: green;
+}
+div {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+  padding: 20px;
+  background-color: green;
+  color: white;
+}
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+input,
+button {
+  border: none;
+  border-radius: 10px;
+}
+button {
+  width: 5rem;
+  background-color: white;
+  color: green;
+}
+input:focus {
+  outline-color: green;
+  color: green;
+}

@@ -43,10 +43,9 @@ function updateList() {
 }
 
 /* Add listeners */
-buttonEl.addEventListener("click", updateList);
-
 formEl.addEventListener("submit", (event) => {
   event.preventDefault();
+  updateList();
 });
 
 clearButtonEl.addEventListener("click", () => {

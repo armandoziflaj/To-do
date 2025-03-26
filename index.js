@@ -1,5 +1,8 @@
+/* get elements */
 const buttonEl = document.getElementById("button");
-buttonEl.addEventListener("click", updateList);
+const formEL = document.querySelector("form");
+
+console.log(formEL);
 
 function updateList() {
   const inputEl = document.getElementById("task");
@@ -15,3 +18,10 @@ function updateList() {
     inputEl.style.border = "1px red solid";
   }
 }
+
+/* Add listeners */
+buttonEl.addEventListener("click", updateList);
+formEL.addEventListener("submit", (event) => {
+  event.preventDefault();
+  console.log("Submit event", event);
+});

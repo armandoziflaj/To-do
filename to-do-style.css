@@ -38,3 +38,8 @@ input:focus {
   outline-color: green;
   color: green;
 }
+#clear-todos {
+  border: 1px solid green;
+  padding: 5px;
+  width: 150px;
+}

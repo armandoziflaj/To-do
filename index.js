@@ -3,11 +3,11 @@ const buttonEl = document.getElementById("button");
 const formEl = document.querySelector("form");
 const inputEl = document.getElementById("task");
 const listEl = document.querySelector(".inner-list");
-
-// Variables
+const clearButtonEl = document.getElementById("clear-todos");
 
 const renderListItem = (item) => {
   const newTask = document.createElement("li");
+
   newTask.textContent = item;
 
   listEl.appendChild(newTask);
@@ -15,6 +15,7 @@ const renderListItem = (item) => {
 
 if (localStorage.getItem("todos") !== null) {
   const todosArray = localStorage.getItem("todos").split(",");
+
   todosArray.forEach((todo) => {
     renderListItem(todo);
   });
@@ -23,6 +24,7 @@ if (localStorage.getItem("todos") !== null) {
 function updateList() {
   let updatedTodosString;
   let todos = localStorage.getItem("todos");
+
   if (inputEl.value !== "") {
     if (todos !== null) {
       updatedTodosString = todos + "," + inputEl.value;
@@ -42,7 +44,12 @@ function updateList() {
 
 /* Add listeners */
 buttonEl.addEventListener("click", updateList);
+
 formEl.addEventListener("submit", (event) => {
   event.preventDefault();
-  console.log("Submit event", event);
+});
+
+clearButtonEl.addEventListener("click", () => {
+  localStorage.clear();
+  listEl.remove();
 });

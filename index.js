@@ -51,5 +51,6 @@ formEl.addEventListener("submit", (event) => {
 
 clearButtonEl.addEventListener("click", () => {
   localStorage.clear();
-  listEl.remove();
+  // listEl.remove();
+  listEl.textContent = "";
 });
